@@ -1,0 +1,12 @@
+<div class="sidenav-header" >
+    <img [style.width]="profilePicSize()" [style.height]="profilePicSize()" src="assets/user_image.png" alt="user">
+    <div class="header-text" [class.hide-header-text]="!sideNavCollapsed()">
+        <p >Username</p>
+    </div>
+</div>
+<mat-nav-list [style.height] = "sideHeight()">
+    <a  mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.routelink">
+        <mat-icon  >{{item.icon}}</mat-icon>
+        <span  *ngIf = "sideNavCollapsed()">{{item.label}}</span>
+    </a>
+</mat-nav-list>
